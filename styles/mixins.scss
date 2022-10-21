@@ -1,0 +1,112 @@
+@use 'variables' as v;
+
+@function bp($bpName) {
+  @return map-get(v.$breakpoints, $bpName)
+}
+
+@function calc-ratio($height, $width) {
+  @return $height / $width * 100%
+}
+
+@mixin ratio-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin star-header {
+  .star-header {
+    background-color: var(--theme-color-1);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 22px 0;
+    min-height: 68px;
+    align-items: center;
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+    .star-title {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin shine {
+  &::before {
+    position: absolute;
+    top: 0;
+    inset-inline-start: -100%;
+    z-index: 1;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+  }
+  &:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+  }
+}
+
+@mixin shadow-hover {
+  &::before {
+    transition: opacity 0.2s linear;
+    opacity: 0;
+    border-radius: 10px;
+    top: 0;
+    inset-inline-start: 0;
+    content: "";
+    box-shadow: 0px 8px 15px 0px #00000033;
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+  }
+  &:hover, &:focus-within {
+    border-color: var(--icons_menu_item_hover_border-theme-color);
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@mixin clear-btn {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+
