@@ -1,8 +1,11 @@
+@use 'mixins' as *;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'Roboto', sans-serif;
+  font-size: 62.5%;
 }
 
 a {
@@ -10,21 +13,147 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  font-weight: 600;
+  color: #12395D;
+  -webkit-text-stroke: 0.1rem #000000;
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  font-size: 4.2rem;
+  line-height: 138.8%;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 400;
+  color: #1E0D38;
+}
+
+.card {
+  width: 24.2rem;
+  height: 33.7rem;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.card-header {
+  background-color: #172A4A;
+  width: 100%;
+}
+
+.card-type {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  color: #0460A9;
+  margin-top: 2.1rem;
+  text-align: center;
+  letter-spacing: -0.05em;
+}
+
+.line {
+  stroke: #0460A9;
+  stroke-width:0.2rem;
+}
+
+.main-info {
+  width: 16.7rem;
+}
+
+.big-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 5.4rem;
+  color: #0C2B48;
+  line-height: 90%;
+  margin-bottom: 0;
+}
+
+.right-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: right;
+  color: #0C2B48;
+  margin-bottom: 0;
+}
+
+.additional-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 25px;
+  color: #0C2B48;
+  margin-bottom: 0;
+  line-height: 25px;
+}
+
+.bottom-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #0460A9;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #051D33;
+  background: #FAC515;
+  border-radius: 100px;
+  width: 175px;
+}
+
+.card-bottom {
+  width: 100%;
+}
+
+.flag-img {
+  padding-top: 1rem;
+  margin-left: 0.8rem;
+}
+
 * {
   box-sizing: border-box;
 }
 
-//.container {
-//  display: fl;
-//  justify-content: center;
-//}
-//
-//@media (prefers-color-scheme: dark) {
-//  html {
-//    color-scheme: dark;
-//  }
-//  body {
-//    color: white;
-//    background: black;
-//  }
-//}
+
+
+.ribbon-parent {
+  overflow: hidden; /* required */
+  position: relative; /* required  for demo*/
+  height: 6.3rem;
+  width: 100%;
+}
+
+.ribbon {
+  background: linear-gradient(267.92deg, #FDC93F 15.13%, #F8B032 100.03%);
+  position: absolute;
+  white-space: nowrap;
+  width: 20rem;
+  height: 1.8rem;
+  padding-top: 0.4rem;
+  overflow: hidden;
+  left: -33%;
+  //right: -14.98%;
+  top: 18%;
+  //bottom: -7.75%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  vertical-align: center;
+}
+
+.ribbon span {
+  color: #362A0B;
+  font-weight: 600;
+  font-size: 0.9rem;
+}

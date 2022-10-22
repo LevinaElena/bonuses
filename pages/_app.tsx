@@ -7,7 +7,9 @@ import '../styles/globals.scss'
 const MyApp = ({ Component, pageProps }: AppProps) => (
    <Layout>
        <Head>
-           <link href='href="https://fonts.googleapis.com/css2?family=Lato&display=swap"'/>
+           <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"/>
+           <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
+           {/*<link href="https://fonts.googleapis.com/css2?family=Roboto:400,700,400normal"/>*/}
        </Head>
        <div className={'container'}>
             <Component {...pageProps} />
