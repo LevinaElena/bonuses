@@ -28,16 +28,34 @@ h3 {
   color: #1E0D38;
 }
 
+h4 {
+  color: white;
+  font-weight: 400;
+}
+
 .card {
+  display: flex;
+  justify-content: center;
   width: 24.2rem;
   height: 33.7rem;
-  border-radius: 6px;
-  align-items: center;
+  border-radius: 6px 6px 6px 0px;
+  border: none;
+  background-color: #0C2B48;
 }
 
 .card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #172A4A;
   width: 100%;
+  height: 10rem;
+  align-items: center;
+  font-family: Lato, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: white;
 }
 
 .card-type {
@@ -50,6 +68,11 @@ h3 {
   margin-top: 2.1rem;
   text-align: center;
   letter-spacing: -0.05em;
+}
+
+.card-middle-part {
+  display: flex;
+  justify-content: center;
 }
 
 .line {
@@ -77,16 +100,16 @@ h3 {
   text-align: right;
   color: #0C2B48;
   margin-bottom: 0;
+  line-height: 80%;
 }
 
 .additional-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 21px;
-  line-height: 25px;
   color: #0C2B48;
   margin-bottom: 0;
-  line-height: 25px;
+  line-height: 2.5rem;
 }
 
 .bottom-text {
@@ -106,22 +129,38 @@ h3 {
   background: #FAC515;
   border-radius: 100px;
   width: 175px;
+  //margin-left: 1.8rem;
 }
 
-.card-bottom {
+.flag {
+  padding-top: 0.3rem;
+  padding-right: 0.3rem;
+  text-align: end;
+}
+
+.card-bottom-no-radius{
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.3rem;
+  margin: 1.2rem 0 0 0;
 }
 
-.flag-img {
-  padding-top: 1rem;
-  margin-left: 0.8rem;
+.card-container {
+  border: 2px dashed #1D8EFA;
+  border-radius: 0px 0px 80px 0px;
+  width: 24.2rem;
+  height: 23.7rem;
+  background-color: white;
+}
+
+.info {
+  margin: 0.6rem;
 }
 
 * {
   box-sizing: border-box;
 }
-
-
 
 .ribbon-parent {
   overflow: hidden; /* required */

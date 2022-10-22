@@ -75,8 +75,9 @@ const Home:FC<bonusCardProps> = ({bonuses}) => (
                 <div className="card">
                     <div className='card-header'>
                         <Image src={'/ozwin.png'} alt={'Title'} width={185} height={58}/>
-                        <h4 className="card-title">Ripper Casino - Review</h4>
+                        <h4 className="card-header-text">Ripper Casino - Review</h4>
                     </div>
+                    <div className='card-container'>
                         <div className="ribbon-parent">
                             <div className="ribbon">
                                 <span>EXCLUSIVE</span>
@@ -86,7 +87,7 @@ const Home:FC<bonusCardProps> = ({bonuses}) => (
                                 <line x1="86" y1="5" x2="156" y2="5" className={'line'}/>
                             </svg>
                         </div>
-                        <div className="card-title">
+                        <div className="card-middle-part">
                             <div className='main-info'>
                                 <p className='right-text'>400% up to</p>
                                 <p className='big-text'>$4,400</p>
@@ -94,10 +95,18 @@ const Home:FC<bonusCardProps> = ({bonuses}) => (
                                 <p className="bottom-text">on Cleopatras Gold</p>
                             </div>
                         </div>
-                        <div className="card-bottom">
-                            <a href="#" className="btn btn-warning">PLAY</a>
-                            <a className="flag-img"><Image src={'/flag.png'} alt={'Flag'} width={34} height={25}/></a>
+                        <div className="card-bottom-no-radius row">
+                            <div className='col-9 pb-lg-4'>
+                                <a href="#" className="btn btn-warning">PLAY</a>
+                            </div>
+                            <div className='col-3 flag'>
+                                <Image src='/flag.png' alt={'Flag'} width={34} height={25}/>
+                            </div>
                         </div>
+                        <div className='info position-absolute bottom-0 end-0'>
+                            <Image src='/info.png' alt={'info'} width={16} height={16}/>
+                        </div>
+                    </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide><h2>Slide 3</h2></SwiperSlide>
