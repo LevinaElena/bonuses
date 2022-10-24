@@ -1,4 +1,8 @@
 @use 'mixins' as *;
+@import "variables.scss";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html,
 body {
@@ -15,22 +19,66 @@ a {
 
 h2 {
   font-weight: 600;
-  color: #12395D;
-  -webkit-text-stroke: 0.1rem #000000;
-  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
   font-size: 4.2rem;
   line-height: 138.8%;
   text-align: center;
+  color: $dark-blue;
+  -webkit-text-stroke: 0.1rem #000000;
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 h3 {
   font-weight: 400;
-  color: #1E0D38;
+  color: $very-dark-violet;
+  font-size: 20px;
+  line-height: 138.8%;
 }
 
 h4 {
   color: white;
   font-weight: 400;
+}
+
+.container {
+  width: 144rem;
+}
+
+.description {
+  margin: 3rem auto 0 auto;
+  width: 78%;
+  text-align: center;
+}
+
+.tabs-group {
+  display: flex;
+  width: 73.2rem;
+  justify-content: space-between;
+  margin: 2.8rem auto 2.8rem auto;
+}
+
+.btn-blue {
+  width: 23.2rem;
+  height: 3.4rem;
+  background: white;
+  border-radius: 5rem;
+  font-size: 16px;
+  font-family: $main-font;
+  color: $middle-blue;
+  text-transform: capitalize;
+  border: 1px solid $middle-blue;
+
+  &__active {
+    width: 23.2rem;
+    height: 3.4rem;
+    background: $blue-gradient;
+    border-radius: 5rem;
+    font-size: 16px;
+    font-family: $main-font;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+    border: none;
+  }
 }
 
 .card {
@@ -40,7 +88,7 @@ h4 {
   height: 33.7rem;
   border-radius: 6px 6px 6px 0px;
   border: none;
-  background-color: #0C2B48;
+  background-color: $very-dark-blue;
 }
 
 .card-header {
@@ -64,7 +112,7 @@ h4 {
   font-size: 2rem;
   line-height: 2.3rem;
   text-transform: uppercase;
-  color: #0460A9;
+  color: $blue;
   margin-top: 2.1rem;
   text-align: center;
   letter-spacing: -0.05em;
@@ -76,7 +124,7 @@ h4 {
 }
 
 .line {
-  stroke: #0460A9;
+  stroke: $blue;
   stroke-width:0.2rem;
 }
 
@@ -88,7 +136,7 @@ h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 5.4rem;
-  color: #0C2B48;
+  color: $very-dark-blue;
   line-height: 90%;
   margin-bottom: 0;
 }
@@ -98,7 +146,7 @@ h4 {
   font-weight: 400;
   font-size: 1.6rem;
   text-align: right;
-  color: #0C2B48;
+  color: $very-dark-blue;
   margin-bottom: 0;
   line-height: 80%;
 }
@@ -107,7 +155,7 @@ h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 21px;
-  color: #0C2B48;
+  color: $very-dark-blue;
   margin-bottom: 0;
   line-height: 2.5rem;
 }
@@ -125,8 +173,8 @@ h4 {
   font-weight: 700;
   font-size: 1.6rem;
   text-transform: uppercase;
-  color: #051D33;
-  background: #FAC515;
+  color: $mega-dark-blue;
+  background: $btn-bg;
   border-radius: 100px;
   width: 175px;
   //margin-left: 1.8rem;
@@ -147,7 +195,7 @@ h4 {
 }
 
 .card-container {
-  border: 2px dashed #1D8EFA;
+  border: 2px dashed $light-blue;
   border-radius: 0px 0px 80px 0px;
   width: 24.2rem;
   height: 23.7rem;
@@ -170,7 +218,7 @@ h4 {
 }
 
 .ribbon {
-  background: linear-gradient(267.92deg, #FDC93F 15.13%, #F8B032 100.03%);
+  background: $yellow-gradient;
   position: absolute;
   white-space: nowrap;
   width: 20rem;
@@ -195,4 +243,31 @@ h4 {
   color: #362A0B;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+.mySwiper {
+  width: 85%;
+}
+.swiper-wrapper {
+ margin-bottom: 3rem;
+}
+.swiper-button-next, .swiper-button-prev  {
+  border: none;
+  background-color: white;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  content: '';
+  color: black;
+  font-weight: 900;
+}
+
+.swiper-pagination-bullet {
+  width: 4rem !important;
+  height: 1.2rem !important;
+  border-radius: 5rem !important;
+  border: 0.2rem solid #29557C;
+   &-active {
+     background: $blue-gradient !important;
+   }
 }

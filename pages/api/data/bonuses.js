@@ -108,5 +108,60 @@ export const bonuses = [
         freeSpinsCount: 100,
         exclusive: false,
         slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 11,
+        casinoName: 'Bizzo Casino',
+        bonusType: 'No deposit bonus',
+        upToPercent: 400,
+        upToSum: 5555,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 12,
+        casinoName: 'New Casino',
+        bonusType: 'No deposit bonus',
+        upToPercent: 400,
+        upToSum: 3300,
+        img: '/hellSpin.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 13,
+        casinoName: 'First Casino',
+        bonusType: 'No deposit bonus',
+        upToPercent: 300,
+        upToSum: 6000,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 14,
+        casinoName: 'Best Casino',
+        bonusType: 'No deposit bonus',
+        upToPercent: 400,
+        upToSum: 3000,
+        img: '/ripper.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 15,
+        casinoName: 'Biggest Casino',
+        bonusType: 'No deposit bonus',
+        upToPercent: 400,
+        upToSum: 4444,
+        img: '/ozwin.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
     }
 ]

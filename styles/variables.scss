@@ -7,6 +7,17 @@ $breakpoints: (
         "xxl" : 1400px,
         "xxxl" : 1700px
 );
+
+$container-max-widths: (
+        xs: 366px,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 1700px
+);
+
 $dir: left;
 $dir-negative: right;
 // Css Vars
@@ -19,6 +30,20 @@ $dir-negative: right;
   --header-height: 72px;
   --small-column-dekstop-width: 302px;
   --header-offset: 30px;
+
+  //pagination
+  --swiper-pagination-color: #29557C;
+  --swiper-pagination-bullet-inactive-color: white;
+
+  --swiper-pagination-bullet-size: 1.2rem;
+  --swiper-pagination-bullet-width: 4rem;
+  --swiper-pagination-bullet-height: 1.2rem;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  //--swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 1.2rem;
+  //--bs-body-color: #29557C;
+  //--swiper-pagination-bullet-vertical-gap: 6px;
+
   .admin-bar {
     --header-offset: 32px;
   }
@@ -31,6 +56,23 @@ $dir-negative: right;
 html[dir="rtl"] {
   --math: -1;
 }
+
+//fonts
+$main-font: 'Lato', sans-serif;
+$inner-font: 'Roboto', sans-serif;
+
+//colors
+$very-dark-violet: #1E0D38;
+$mega-dark-blue: #051D33;
+$very-dark-blue: #0C2B48;
+$dark-blue: #12395D;
+$middle-blue: #29557C;
+$blue: #0460A9;
+$light-blue: #1D8EFA;
+$btn-bg: #FAC515;
+$yellow-gradient: linear-gradient(267.92deg, #FDC93F 15.13%, #F8B032 100.03%);
+$blue-gradient: linear-gradient(274.15deg, #2A577E 3.47%, #12395D 66.48%);
+$light-blue-gradient: linear-gradient(55.31deg, #F1FDFF 16.56%, #FFFFFF 91.12%);
 
 //Color Classes
 .highlight {
