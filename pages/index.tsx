@@ -16,8 +16,6 @@ type bonusCardProps = {
     bonuses: [bonusCardType]
 }
 
-// export const swiperRef = useRef<SwiperType>()
-
 export const getStaticProps:GetStaticProps = async () => {
     const response = await fetch(`${process.env.API_HOST}/bonuses/`);
     const data = await response.json();
@@ -62,21 +60,41 @@ const Home:FC<bonusCardProps> = ({bonuses}) => {
                 swiperRef.current = swiper;
             }}
             breakpoints={{
-                "@0.00": {
+
+                336: {
                     slidesPerView: 1,
                     spaceBetween: 5,
+                    slidesPerGroup:1,
                 },
-                "@0.75": {
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                    slidesPerGroup:2,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                    slidesPerGroup:2,
+                },
+                992: {
                     slidesPerView: 3,
                     spaceBetween: 5,
+                    slidesPerGroup:3,
+            },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    slidesPerGroup:4,
+            },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                    slidesPerGroup:4,
                 },
-                "@1.00": {
+                1700: {
                     slidesPerView: 5,
                     spaceBetween: 5,
-                },
-                "@1.50": {
-                    slidesPerView: 5,
-                    spaceBetween: 5,
+                    slidesPerGroup:5,
                 },
             }}
             modules={[Pagination, Navigation, Autoplay]}
@@ -91,6 +109,9 @@ const Home:FC<bonusCardProps> = ({bonuses}) => {
         <div>
             <button onClick={() => swiperRef.current?.slidePrev()} className={'swiper-button-prev'}></button>
             <button onClick={() => swiperRef.current?.slideNext()} className={'swiper-button-next'}></button>
+        </div>
+        <div className='single-button'>
+            <button className='btn-blue-gradient'>Show All No Deposit Bonuses</button>
         </div>
     </>)
 };

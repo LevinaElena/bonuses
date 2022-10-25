@@ -34,15 +34,11 @@ $dir-negative: right;
   //pagination
   --swiper-pagination-color: #29557C;
   --swiper-pagination-bullet-inactive-color: white;
-
   --swiper-pagination-bullet-size: 1.2rem;
   --swiper-pagination-bullet-width: 4rem;
   --swiper-pagination-bullet-height: 1.2rem;
   --swiper-pagination-bullet-inactive-opacity: 1;
-  //--swiper-pagination-bullet-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 1.2rem;
-  //--bs-body-color: #29557C;
-  //--swiper-pagination-bullet-vertical-gap: 6px;
 
   .admin-bar {
     --header-offset: 32px;
@@ -65,8 +61,10 @@ $inner-font: 'Roboto', sans-serif;
 $very-dark-violet: #1E0D38;
 $mega-dark-blue: #051D33;
 $very-dark-blue: #0C2B48;
+$middle-dark-blue: #11314F;
 $dark-blue: #12395D;
-$middle-blue: #29557C;
+$middle-blue-first: #29557C;
+$middle-blue-second: #2A577E;
 $blue: #0460A9;
 $light-blue: #1D8EFA;
 $btn-bg: #FAC515;

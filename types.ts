@@ -9,3 +9,9 @@ export type bonusCardType = {
     exclusive: boolean,
     slotName: string
 }
+
+export type quesAnswType = {
+    id: number,
+    question: string,
+    answer: string,
+}

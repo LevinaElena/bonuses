@@ -12,7 +12,7 @@ const Bonuses:FC<bonusCardProps> = ({bonus}) => {
     }
     //const isExclusive = `<div className=\"ribbon\"><span>EXCLUSIVE</span></div>`
     return (
-        <div className="card">
+        <div className="card-item">
             <div className='card-header'>
                 <Image src={bonus.img} alt={bonus.casinoName} width={185} height={58}/>
                 <h4 className="card-header-text">{bonus.casinoName} - Review</h4>
