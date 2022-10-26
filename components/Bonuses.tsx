@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {bonusCardType} from "../types";
 import {FC} from "react";
+import styles from '../styles/Home.module.scss'
 
 type bonusCardProps = {
     bonus: bonusCardType
@@ -10,22 +11,21 @@ const Bonuses:FC<bonusCardProps> = ({bonus}) => {
     if (!bonus) {
         return null;
     }
-    //const isExclusive = `<div className=\"ribbon\"><span>EXCLUSIVE</span></div>`
     return (
-        <div className="card-item">
-            <div className='card-header'>
+        <div className={styles.card_item}>
+            <div className={styles.card_header}>
                 <Image src={bonus.img} alt={bonus.casinoName} width={185} height={58}/>
                 <h4 className="card-header-text">{bonus.casinoName} - Review</h4>
             </div>
-            <div className='card-container'>
+            <div className={styles.card_container}>
                 <div className="ribbon-parent">
                     {bonus.exclusive && <div className="ribbon"><span>EXCLUSIVE</span></div>}
-                    <div className='card-type'>{bonus.bonusType}</div>
+                    <div className={styles.card_type}>{bonus.bonusType}</div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                         <line x1="86" y1="5" x2="156" y2="5" className={'line'}/>
                     </svg>
                 </div>
-                <div className="card-middle-part">
+                <div className={styles.card_middle_part}>
                     <div className='main-info'>
                         <p className='right-text'>{bonus.upToPercent}% up to</p>
                         <p className='big-text'>${bonus.upToSum}</p>
@@ -37,7 +37,7 @@ const Bonuses:FC<bonusCardProps> = ({bonus}) => {
                     <div className='col-9 pb-lg-4'>
                         <a href="#" className="btn btn-warning">PLAY</a>
                     </div>
-                    <div className='col-3 flag'>
+                    <div className={`col-3 ${styles.flag}`}>
                         <Image src='/flag.png' alt={'Flag'} width={34} height={25}/>
                     </div>
                 </div>

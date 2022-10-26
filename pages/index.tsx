@@ -1,5 +1,4 @@
 import Heading from "../components/Heading";
-import Image from "next/image";
 import {GetStaticProps} from 'next';
 import {bonusCardType} from "../types";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,6 +10,8 @@ import "swiper/css/bundle";
 import "swiper/css/navigation";
 import Bonuses from "../components/Bonuses";
 import React, {FC, useRef} from "react";
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {getBonuses, selectBonus} from '../redux/bonusSlice';
 
 type bonusCardProps = {
     bonuses: [bonusCardType]
@@ -32,11 +33,19 @@ export const getStaticProps:GetStaticProps = async () => {
 }
 
 const Home:FC<bonusCardProps> = ({bonuses}) => {
+    const dispatch = useAppDispatch();
+    const {data,pending,error} = useAppSelector(selectBonus);
+
     const swiperRef = useRef<SwiperType>();
-        return (
+    return (
     <>
+        {/*<button onClick={() => dispatch(getBonuses())} disabled={pending}>*/}
+        {/*    getBonuses*/}
+        {/*</button>*/}
         <div className='description'>
-            <Heading text={'Best Bonuses Lorem Ipsum'} tag={'h2'}/>
+            <h2 className={styles.bonus_h2}>
+                Best Bonuses Lorem Ipsum
+            </h2>
             <Heading text={'Welcome, all you passionate Australian online casino players out there! If you a rookie looking for some quick guidelines on how to get started or a seasoned player searching for some fresh real money casino recommendations, you\'ve reached the right spot at True Blue!'} tag={'h3'}/>
             </div>
         <div className='tabs-group'>

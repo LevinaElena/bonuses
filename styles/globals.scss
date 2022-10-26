@@ -1,5 +1,6 @@
 @use 'mixins' as *;
 @import "variables.scss";
+@import "custom-variables";
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -15,16 +16,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 4.2rem;
-  line-height: 138.8%;
-  text-align: center;
-  color: $dark-blue;
-  -webkit-text-stroke: 0.1rem #000000;
-  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 h3 {
@@ -95,48 +86,6 @@ h4 {
   border-radius: 100px;
 }
 
-.card-item {
-  display: flex;
-  justify-content: center;
-  width: 24.2rem;
-  height: 33.7rem;
-  border-radius: 6px 6px 6px 0px;
-  border: none;
-  background-color: $very-dark-blue;
-}
-
-.card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #172A4A;
-  width: 100%;
-  height: 10rem;
-  align-items: center;
-  font-family: Lato, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: white;
-}
-
-.card-type {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-  line-height: 2.3rem;
-  text-transform: uppercase;
-  color: $blue;
-  margin-top: 2.1rem;
-  text-align: center;
-  letter-spacing: -0.05em;
-}
-
-.card-middle-part {
-  display: flex;
-  justify-content: center;
-}
-
 .line {
   stroke: $blue;
   stroke-width:0.2rem;
@@ -194,28 +143,6 @@ h4 {
   //margin-left: 1.8rem;
 }
 
-.flag {
-  padding-top: 0.3rem;
-  padding-right: 0.3rem;
-  text-align: end;
-}
-
-.card-bottom-no-radius{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 1.3rem;
-  margin: 1.2rem 0 0 0;
-}
-
-.card-container {
-  border: 2px dashed $light-blue;
-  border-radius: 0px 0px 80px 0px;
-  width: 24.2rem;
-  height: 23.7rem;
-  background-color: white;
-}
-
 .info {
   margin: 0.6rem;
 }
@@ -260,11 +187,13 @@ h4 {
 }
 
 .mySwiper {
-  width: 85%;
+  width: 100%;
 }
+
 .swiper-wrapper {
  margin-bottom: 4rem;
 }
+
 .swiper-button-next, .swiper-button-prev  {
   border: none;
   background-color: white;
@@ -290,14 +219,21 @@ h4 {
   justify-content: center;
 }
 
-.question {
+.accordion-header {
+  border: none;
+}
+
+.accordion-button {
+  font-weight: 600;
   font-size: 1.8rem;
+  line-height: 100%;
+  color: $blue;
 }
 
 .accordion {
   display: grid;
   grid-template-columns:  repeat(auto-fill, minmax(30rem, 1fr));
-  gap: 0.3rem;
+  gap: 0.5rem;
 
   .item {
     border-radius: 10px;

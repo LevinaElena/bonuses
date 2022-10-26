@@ -1,0 +1,57 @@
+@import "custom-variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: block;
+  margin-bottom: 1.9rem;
+}
+
+.header_container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3.8rem;
+}
+
+.faq_image {
+  min-width: 20rem;
+  min-height: 14.1rem;
+  margin-right: 2.8rem;
+}
+
+.faq_text {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  padding: 2.2rem 0 2.2rem 0;
+  color: $very-dark-blue;
+}
+
+.faq_h1 {
+  font-weight: 700;
+  font-size: 4.2rem;
+  text-align: left;
+  color: $middle-blue-second;
+}
+
+.faq_h2 {
+  font-weight: 700;
+  text-align: left;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  color: $middle-blue-second;
+}
+
+
+
+.accordion-header {
+  border: none !important;
+}
+
+.answer {
+  font-size: 1.6rem;
+  line-height: 110%;
+  color: $very-dark-violet;
+}
