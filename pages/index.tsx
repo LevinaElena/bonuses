@@ -12,36 +12,19 @@ import Bonuses from "../components/Bonuses";
 import React, {FC, useRef} from "react";
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {getBonuses, selectBonus} from '../redux/bonusSlice';
+import {wrapper} from "../redux/store";
+import { NextPage } from 'next'
 
 type bonusCardProps = {
     bonuses: [bonusCardType]
 }
 
-export const getStaticProps:GetStaticProps = async () => {
-    const response = await fetch(`${process.env.API_HOST}/bonuses/`);
-    const data = await response.json();
-
-    if (!data) {
-        return {
-            notFound: true,
-        }
-    }
-
-    return {
-        props: {bonuses: data}
-    }
-}
-
-const Home:FC<bonusCardProps> = ({bonuses}) => {
+const Home:NextPage<bonusCardProps> = ({bonuses}) => {
+    const { data, pending, error } = useAppSelector((state) => state.bonus);
     const dispatch = useAppDispatch();
-    const {data,pending,error} = useAppSelector(selectBonus);
-
     const swiperRef = useRef<SwiperType>();
     return (
     <>
-        {/*<button onClick={() => dispatch(getBonuses())} disabled={pending}>*/}
-        {/*    getBonuses*/}
-        {/*</button>*/}
         <div className='description'>
             <h2 className={styles.bonus_h2}>
                 Best Bonuses Lorem Ipsum
@@ -50,7 +33,7 @@ const Home:FC<bonusCardProps> = ({bonuses}) => {
             </div>
         <div className='tabs-group'>
             <button className='btn-blue__active'>No deposit bonus</button>
-            <button className='btn-blue'>Welcome bonus</button>
+            <button className='btn-blue' onClick={() => dispatch(getBonuses())}>Welcome bonus</button>
             <button className='btn-blue'>Free Spins bonus</button>
         </div>
         <Swiper
@@ -109,11 +92,11 @@ const Home:FC<bonusCardProps> = ({bonuses}) => {
             modules={[Pagination, Navigation, Autoplay]}
             className="mySwiper"
         >
-            {
-                bonuses && bonuses.map((bonus) => (
-            <SwiperSlide>
-                <Bonuses bonus={bonus}/>
-            </SwiperSlide>))}
+            {!!data.length && data.map((item) => (
+                <SwiperSlide>
+                    <Bonuses bonus={item}/>
+                </SwiperSlide>
+            ))}
         </Swiper>
         <div>
             <button onClick={() => swiperRef.current?.slidePrev()} className={'swiper-button-prev'}></button>
@@ -125,7 +108,31 @@ const Home:FC<bonusCardProps> = ({bonuses}) => {
     </>)
 };
 
+Home.getInitialProps = wrapper.getInitialPageProps(
+    ({ dispatch }) =>
+        async () => {
+            await dispatch(getBonuses());
+        }
+);
+
 export default Home;
+
+
+// export const getStaticProps:GetStaticProps = async () => {
+//     const response = await fetch(`${process.env.API_HOST}/bonuses/`);
+//     const data = await response.json();
+//
+//     if (!data) {
+//         return {
+//             notFound: true,
+//         }
+//     }
+//
+//     return {
+//         props: {bonuses: data}
+//     }
+// }
+
 
 //
 // import Head from 'next/head'

@@ -1,14 +1,44 @@
-import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
+import {Action, AnyAction, combineReducers, configureStore, ThunkAction} from '@reduxjs/toolkit';
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import bonusReducer from './bonusSlice';
-import faqReducer from './faqSlice';
+import casinoReducer from './casinoSlice';
+import {applyMiddleware} from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 
-export const store = configureStore({
-    reducer: {
-        bonus: bonusReducer,
-        faq: faqReducer
-    },
+const middleware = [thunk];
+
+const combinedReducer = combineReducers({
+    bonus: bonusReducer,
+    casino: casinoReducer,
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
+const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
+    if (action.type === HYDRATE) {
+        const nextState = {
+            ...state,
+            ...action.payload,
+        };
+        return nextState;
+    } else {
+        return combinedReducer(state, action);
+    }
+};
+
+export const makeStore = () =>
+    configureStore({
+        reducer,
+    }, );
+
+type Store = ReturnType<typeof makeStore>;
+
+export type AppDispatch = Store['dispatch'];
+export type RootState = ReturnType<Store['getState']>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+    ReturnType,
+    RootState,
+    unknown,
+    Action<string>
+    >;
+
+export const wrapper = createWrapper(makeStore, { debug: true });

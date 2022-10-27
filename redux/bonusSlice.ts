@@ -20,31 +20,15 @@ const initialState: bonusState = {
     error: false,
 };
 
-export const getBonuses = createAsyncThunk('kanye/kanyeQuote', async () => {
-    const response = await axios.get(`${process.env.API_HOST}/bonuses/`);
+export const getBonuses = createAsyncThunk('bonus/bonuses', async () => {
+    const response = await axios.get(`http://localhost:3000/api/bonuses/`);
     return response.data;
 });
 
 export const bonusSlice = createSlice({
     name: 'bonus',
     initialState,
-// The `reducers` field lets us define reducers and generate associated actions.
-// In this example, 'increment', 'decrement' and 'incrementByAmount' are actions. They can be triggered from outside this slice, anywhere in the app.
-// So for example, if we make a dispatch to the 'increment' action here from the index page, it will get triggered and change the value of the state from 0 to 1.
     reducers: {
-//         increment: state => {
-// // Redux Toolkit allows us to write "mutating" logic in reducers.
-// // It doesn't actually mutate the state because it uses the Immer library, which detects changes to a "draft state" and produces a brand new immutable state based off those changes
-//             state.value++;
-//         },
-//         decrement: state => {
-//             state.value--;
-//         },
-// // 'The increment by amount' action here, has one job and that is to take whatever value is passed to it and add that to state.value.
-// // The PayloadAction type here is used to declare the contents of `action.payload`
-//         incrementByAmount: (state, action: PayloadAction<number>) => {
-//             state.value += action.payload;
-//         },
     },
     extraReducers: builder => {
         builder

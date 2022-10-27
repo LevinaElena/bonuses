@@ -1,3 +1,5 @@
+import {number, string} from "prop-types";
+
 export type bonusCardType = {
     id: number,
     casinoName: string,
@@ -14,4 +16,13 @@ export type quesAnswType = {
     id: number,
     question: string,
     answer: string,
+}
+
+export type listItemsType = {
+    id: number,
+    casinoName: string,
+    bgColor: string,
+    rating: number,
+    payout: number,
+    img: string,
 }
