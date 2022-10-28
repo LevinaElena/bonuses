@@ -1,109 +1,42 @@
+import React, {useEffect, useState} from "react";
 import Heading from "../components/Heading";
-import {GetStaticProps} from 'next';
 import {bonusCardType} from "../types";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType, Navigation, Autoplay, Controller, Pagination} from "swiper";
 import styles from '../styles/Home.module.scss'
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-import "swiper/css/navigation";
-import Bonuses from "../components/Bonuses";
-import React, {FC, useRef} from "react";
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
-import {getBonuses, selectBonus} from '../redux/bonusSlice';
+import {getBonuses} from '../redux/bonusSlice';
 import {wrapper} from "../redux/store";
 import { NextPage } from 'next'
+import Slider from "../components/home/Slider";
 
 type bonusCardProps = {
     bonuses: [bonusCardType]
 }
 
 const Home:NextPage<bonusCardProps> = ({bonuses}) => {
-    const { data, pending, error } = useAppSelector((state) => state.bonus);
-    const dispatch = useAppDispatch();
-    const swiperRef = useRef<SwiperType>();
+    const [type, setType] = useState('No Deposit Bonus');
+
+    useEffect(() => {
+        console.log('type', type)
+    }, [type])
+
+    // const { data, pending, error } = useAppSelector((state) => state.bonus);
+    // const dispatch = useAppDispatch();
     return (
     <>
-        <div className='description'>
+        <div className={styles.description}>
             <h2 className={styles.bonus_h2}>
                 Best Bonuses Lorem Ipsum
             </h2>
             <Heading text={'Welcome, all you passionate Australian online casino players out there! If you a rookie looking for some quick guidelines on how to get started or a seasoned player searching for some fresh real money casino recommendations, you\'ve reached the right spot at True Blue!'} tag={'h3'}/>
-            </div>
-        <div className='tabs-group'>
-            <button className='btn-blue__active'>No deposit bonus</button>
-            <button className='btn-blue' onClick={() => dispatch(getBonuses())}>Welcome bonus</button>
-            <button className='btn-blue'>Free Spins bonus</button>
         </div>
-        <Swiper
-            slidesPerView={5}
-            //cssMode={true}
-            slidesPerGroup={5}
-            spaceBetween={5}
-            pagination={{
-                clickable: true,
-                bulletElement: 'div'
-            }}
-            createElements={true}
-            navigation={{nextEl:'.new-swiper-button-next', prevEl: '.new-swiper-button-prev',}}
-            keyboard={true}
-            onBeforeInit={(swiper) => {
-                swiperRef.current = swiper;
-            }}
-            breakpoints={{
-
-                336: {
-                    slidesPerView: 1,
-                    spaceBetween: 5,
-                    slidesPerGroup:1,
-                },
-                576: {
-                    slidesPerView: 2,
-                    spaceBetween: 5,
-                    slidesPerGroup:2,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 5,
-                    slidesPerGroup:2,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 5,
-                    slidesPerGroup:3,
-            },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 5,
-                    slidesPerGroup:4,
-            },
-                1400: {
-                    slidesPerView: 4,
-                    spaceBetween: 5,
-                    slidesPerGroup:4,
-                },
-                1700: {
-                    slidesPerView: 5,
-                    spaceBetween: 5,
-                    slidesPerGroup:5,
-                },
-            }}
-            modules={[Pagination, Navigation, Autoplay]}
-            className="mySwiper"
-        >
-            {!!data.length && data.map((item) => (
-                <SwiperSlide>
-                    <Bonuses bonus={item}/>
-                </SwiperSlide>
-            ))}
-        </Swiper>
-        <div>
-            <button onClick={() => swiperRef.current?.slidePrev()} className={'swiper-button-prev'}></button>
-            <button onClick={() => swiperRef.current?.slideNext()} className={'swiper-button-next'}></button>
+        <div className={styles.tabs_group}>
+            <button className={styles.btn_blue__active} onClick={() => setType('No Deposit Bonus')}>No deposit bonus</button>
+            <button className={styles.btn_blue} onClick={() => setType('Welcome Bonus')}>Welcome bonus</button>
+            <button className={styles.btn_blue} onClick={() => setType('Free Spins Bonus')}>Free Spins bonus</button>
         </div>
-        <div className='single-button'>
-            <button className='btn-blue-gradient'>Show All No Deposit Bonuses</button>
+        <Slider/>
+        <div className={styles.single_button}>
+            <button className={styles.btn_blue_gradient}>Show All No Deposit Bonuses</button>
         </div>
     </>)
 };
@@ -116,91 +49,3 @@ Home.getInitialProps = wrapper.getInitialPageProps(
 );
 
 export default Home;
-
-
-// export const getStaticProps:GetStaticProps = async () => {
-//     const response = await fetch(`${process.env.API_HOST}/bonuses/`);
-//     const data = await response.json();
-//
-//     if (!data) {
-//         return {
-//             notFound: true,
-//         }
-//     }
-//
-//     return {
-//         props: {bonuses: data}
-//     }
-// }
-
-
-//
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.scss'
-//
-// export default function Home() {
-//   return (
-//     <div className={styles.container}>
-//       <Head>
-//         <title>Create Next App</title>
-//         <meta name="description" content="Generated by create next app" />
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-//
-//       <main className={styles.main}>
-//         <h1 className={styles.title}>
-//           Welcome to <a href="https://nextjs.org">Next.js!</a>
-//         </h1>
-//
-//         <p className={styles.description}>
-//           Get started by editing{' '}
-//           <code className={styles.code}>pages/index.js</code>
-//         </p>
-//
-//         <div className={styles.grid}>
-//           <a href="https://nextjs.org/docs" className={styles.card}>
-//             <h2>Documentation &rarr;</h2>
-//             <p>Find in-depth information about Next.js features and API.</p>
-//           </a>
-//
-//           <a href="https://nextjs.org/learn" className={styles.card}>
-//             <h2>Learn &rarr;</h2>
-//             <p>Learn about Next.js in an interactive course with quizzes!</p>
-//           </a>
-//
-//           <a
-//             href="https://github.com/vercel/next.js/tree/canary/examples"
-//             className={styles.card}
-//           >
-//             <h2>Examples &rarr;</h2>
-//             <p>Discover and deploy boilerplate example Next.js projects.</p>
-//           </a>
-//
-//           <a
-//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//             className={styles.card}
-//           >
-//             <h2>Deploy &rarr;</h2>
-//             <p>
-//               Instantly deploy your Next.js site to a public URL with Vercel.
-//             </p>
-//           </a>
-//         </div>
-//       </main>
-//
-//       <footer className={styles.footer}>
-//         <a
-//           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Powered by{' '}
-//           <span className={styles.logo}>
-//             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-//           </span>
-//         </a>
-//       </footer>
-//     </div>
-//   )
-// }

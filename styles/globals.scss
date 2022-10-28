@@ -11,6 +11,7 @@ body {
   margin: 0;
   font-family: 'Lato', 'Roboto', sans-serif;
   font-size: 62.5%;
+  background-color: $grey;
 }
 
 a {
@@ -34,61 +35,13 @@ h4 {
   width: 144rem;
 }
 
-.description {
-  margin: 3rem auto 0 auto;
-  width: 78%;
-  text-align: center;
-}
-
-.tabs-group {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  margin: 2.8rem auto 2.8rem auto;
-}
-
-.btn-blue {
-  width: 23.2rem;
-  min-height: 3.4rem;
-  background: white;
-  border-radius: 5rem;
-  font-size: 16px;
-  font-family: $main-font;
-  color: $middle-blue-first;
-  text-transform: capitalize;
-  height: fit-content;
-  border: 1px solid $middle-blue-first;
-
-  &__active {
-    width: 23.2rem;
-    min-height: 3.4rem;
-    background: $blue-gradient;
-    border-radius: 5rem;
-    font-size: 16px;
-    font-family: $main-font;
-    font-weight: 500;
-    color: white;
-    text-transform: capitalize;
-    border: none;
-    height: fit-content;
-  }
-}
-
-.btn-blue-gradient {
-  width: 29.5rem;
-  height: 3.8rem;
-  font-family: $main-font;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: $middle-dark-blue;
-  background: $light-blue-gradient;
-  border: 2px solid $middle-blue-second;
-  border-radius: 100px;
-}
-
 .line {
   stroke: $blue;
   stroke-width:0.2rem;
+}
+
+.rectangle {
+  fill:blue;
 }
 
 .main-info {
@@ -181,7 +134,7 @@ h4 {
 }
 
 .ribbon span {
-  color: #362A0B;
+  color: $exclusive;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -196,7 +149,7 @@ h4 {
 
 .swiper-button-next, .swiper-button-prev  {
   border: none;
-  background-color: white;
+  background-color: $grey;
 }
 
 .swiper-button-next:after, .swiper-button-prev:after {
@@ -214,13 +167,12 @@ h4 {
      background: $blue-gradient !important;
    }
 }
-.single-button {
-  display: flex;
-  justify-content: center;
-}
+
+//accordion
 
 .accordion-header {
   border: none;
+  text-transform: capitalize;
 }
 
 .accordion-button {
@@ -234,8 +186,50 @@ h4 {
   display: grid;
   grid-template-columns:  repeat(auto-fill, minmax(30rem, 1fr));
   gap: 0.5rem;
+  background-color: white;
+  padding: 1rem;
+}
 
-  .item {
-    border-radius: 10px;
-  }
+.item {
+  border:none;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.qa-icon {
+  margin-right: 0.8rem;
+}
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button .collapsed {
+  border-color: white;
+  background-color: white;
+}
+
+.accordion-preview .collapse:not(.show) {
+  display: block;
+}
+.accordion-preview .collapse:not(.show) .accordion-body {
+  max-height: 100px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.accordion-preview .collapse:not(.show) .accordion-body:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  //background: linear-gradient(to top,
+  //        rgba(255,255,255, 1) 5%,
+  //        rgba(255,255,255, 0) 60%
+  //);
+  pointer-events: none; /* so the text is still selectable */
 }

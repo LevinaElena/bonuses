@@ -65,6 +65,71 @@
   margin: 1.2rem 0 0 0;
 }
 
+.swiper_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:center;
+  align-items: center;
+}
+
+.single_button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_blue_gradient {
+  width: 29.5rem;
+  height: 3.8rem;
+  font-family: $main-font;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: $middle-dark-blue;
+  background: $light-blue-gradient;
+  border: 2px solid $middle-blue-second;
+  border-radius: 100px;
+}
+
+.tabs_group {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+  margin: 2.8rem auto 2.8rem auto;
+}
+
+.btn_blue {
+  width: 23.2rem;
+  min-height: 3.4rem;
+  background: white;
+  border-radius: 5rem;
+  font-size: 16px;
+  font-family: $main-font;
+  color: $middle-blue-first;
+  text-transform: capitalize;
+  height: fit-content;
+  border: 1px solid $middle-blue-first;
+
+  &__active {
+    width: 23.2rem;
+    min-height: 3.4rem;
+    background: $blue-gradient;
+    border-radius: 5rem;
+    font-size: 16px;
+    font-family: $main-font;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+    border: none;
+    height: fit-content;
+  }
+}
+
+.description {
+  margin: 3rem auto 0 auto;
+  width: 78%;
+  text-align: center;
+}
+
 /*//.container {*/
 /*//  padding: 0 2rem;*/
 /*//}*/

@@ -163,5 +163,170 @@ export const bonuses = [
         freeSpinsCount: 100,
         exclusive: true,
         slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 16,
+        casinoName: 'Ripper Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 2000,
+        img: '/ripper.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 17,
+        casinoName: 'Ozwin Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 4000,
+        img: '/ozwin.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 18,
+        casinoName: 'Fair Go Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 8888,
+        img: '/fairGo.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 19,
+        casinoName: 'Hell Spin Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 4400,
+        img: '/hellSpin.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 20,
+        casinoName: 'Bizzo Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 5555,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 21,
+        casinoName: 'New Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 3300,
+        img: '/hellSpin.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 22,
+        casinoName: 'First Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 300,
+        upToSum: 6000,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 23,
+        casinoName: 'Best Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 3000,
+        img: '/ripper.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 24,
+        casinoName: 'Biggest Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 4444,
+        img: '/ozwin.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 25,
+        casinoName: 'Main Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 6600,
+        img: '/ozwin.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 26,
+        casinoName: 'Bizzo Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 5555,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 27,
+        casinoName: 'New Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 3300,
+        img: '/hellSpin.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 28,
+        casinoName: 'First Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 300,
+        upToSum: 6000,
+        img: '/bizzo.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 29,
+        casinoName: 'Best Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 3000,
+        img: '/ripper.png',
+        freeSpinsCount: 100,
+        exclusive: false,
+        slotName: "Cleopatra's Gold"
+    },
+    {
+        id: 30,
+        casinoName: 'Biggest Casino',
+        bonusType: 'Welcome Bonus',
+        upToPercent: 400,
+        upToSum: 4444,
+        img: '/ozwin.png',
+        freeSpinsCount: 100,
+        exclusive: true,
+        slotName: "Cleopatra's Gold"
     }
 ]

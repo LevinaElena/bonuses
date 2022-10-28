@@ -4,7 +4,7 @@ import styles from '../../styles/Faq.module.scss'
 
 const FaqHeader:FC = () => (
     <>
-        <div className={'heading'}>
+        <div className={styles.heading}>
             <h1 className={styles.faq_h1}>
                 FAQ h1
             </h1>

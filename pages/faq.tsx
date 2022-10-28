@@ -1,57 +1,40 @@
 import {GetStaticProps} from "next";
+import useSWR from 'swr';
+import axios from 'axios';
 import { NextPage } from 'next'
 import {listItemsType, quesAnswType} from "../types";
 import {FC} from "react";
 import FaqHeader from "../components/faq/FaqHeader";
 import FaqBody from "../components/faq/FaqBody";
 import styles from "../styles/Faq.module.scss";
-import SideBarBlock from "../components/faq/SideBarBlock";
-import {useAppDispatch} from "../redux/hooks";
-import {wrapper} from "../redux/store";
-import {getCasinos} from "../redux/casinoSlice";
-import {getBonuses} from "../redux/bonusSlice";
+import SideBarBlock from "../components/sidebar/SideBarBlock";
 
 type questionAnswerProps = {
     qa?: [quesAnswType]
 }
 
-// export const getStaticProps:GetStaticProps = async () => {
-//     const response = await fetch(`${process.env.API_HOST}/faq/`);
-//     const data = await response.json();
-//
-//     if (!data) {
-//         return {
-//             notFound: true,
-//         }
-//     }
-//
-//     return {
-//         props: {qa: data},
-//     }
-// }
+const fetcher = url => axios.get(url).then(res => res.data)
 
 const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
-    const dispatch = useAppDispatch();
+
+    const { data: faq } = useSWR('http://localhost:3000/api/faq',fetcher);
+    const { data: casino } = useSWR('http://localhost:3000/api/sidebar',fetcher);
+    const { data: topBonuses } = useSWR('http://localhost:3000/api/topbonuses',fetcher);
+    const { data: games } = useSWR('http://localhost:3000/api/topgames',fetcher);
+
 return(
     <div className={styles.faq_body}>
-        {/*<div className={styles.wrapper}>*/}
-        {/*     <FaqHeader/>*/}
-        {/*     <FaqBody qa={qa}/>*/}
-        {/*</div>*/}
+        <div className={styles.wrapper}>
+             <FaqHeader/>
+             <FaqBody qa={faq}/>
+        </div>
         <div className={styles.side_bar}>
-            <SideBarBlock sideBarName={'Top Casinos'}/>
-            <SideBarBlock sideBarName={'Top Bonuses'}/>
-            <SideBarBlock sideBarName={'Top Slot Games'}/>
+            <SideBarBlock sideBarName={'Top Casinos'} data={casino} type={'casino'}/>
+            <SideBarBlock sideBarName={'Top Bonuses'} data={topBonuses} type={'topBonuses'}/>
+            <SideBarBlock sideBarName={'Top Slot Games'} data={games} type={'games'}/>
         </div>
     </div>
 )
 };
-
-FaqBlock.getInitialProps = wrapper.getInitialPageProps(
-    ({ dispatch }) =>
-        async () => {
-            await dispatch(getCasinos());
-        }
-);
 
 export default FaqBlock;
