@@ -35,13 +35,19 @@ h4 {
   width: 144rem;
 }
 
+.navbar {
+  background: linear-gradient(180deg, #2A577E 0%, #12395D 99.25%);
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .line {
   stroke: $blue;
   stroke-width:0.2rem;
-}
-
-.rectangle {
-  fill:blue;
 }
 
 .main-info {
@@ -185,17 +191,20 @@ h4 {
 .accordion {
   display: grid;
   grid-template-columns:  repeat(auto-fill, minmax(30rem, 1fr));
-  gap: 0.5rem;
+  column-gap: 4rem;
   background-color: white;
-  padding: 1rem;
+  box-shadow: none;
 }
 
 .item {
   border:none;
+  border-bottom: 0.1rem solid $blue;
+  padding: 0 0 0.8rem 0;
 }
 
 .accordion-item {
   border: none;
+  padding: 0;
 }
 
 .qa-icon {
@@ -205,31 +214,44 @@ h4 {
   display: none;
 }
 
-.accordion-button .collapsed {
+.accordion-button {
   border-color: white;
   background-color: white;
 }
 
-.accordion-preview .collapse:not(.show) {
-  display: block;
-}
-.accordion-preview .collapse:not(.show) .accordion-body {
-  max-height: 100px;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 1rem;
+.accordion-button:not(.collapsed) {
+  background-color: white;
+  box-shadow: none;
 }
 
-.accordion-preview .collapse:not(.show) .accordion-body:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  //background: linear-gradient(to top,
-  //        rgba(255,255,255, 1) 5%,
-  //        rgba(255,255,255, 0) 60%
-  //);
-  pointer-events: none; /* so the text is still selectable */
+.accordion-button:focus {
+  box-shadow: none;
 }
+
+button:focus:not(:focus-visible) {
+
+}
+
+  .accordion-preview .collapse:not(.show) {
+    display: block;
+  }
+  .accordion-preview .collapse:not(.show) .accordion-body {
+    max-height: 8.4rem;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1rem;
+  }
+
+  .accordion-preview .collapse:not(.show) .accordion-body:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    //background: linear-gradient(to top,
+    //        rgba(255,255,255, 1) 5%,
+    //        rgba(255,255,255, 0) 60%
+    //);
+    pointer-events: none; /* so the text is still selectable */
+  }

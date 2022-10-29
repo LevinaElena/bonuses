@@ -16,9 +16,8 @@ const FaqBody:FC<questionAnswerProps> = ({qa}) => (
                     FAQ lorem ipsum h2
                 </h2>
             </div>
-            {/*<Accordion flush={true} defaultActiveKey={['0', '1','2','3','4','5','6','7','8']} alwaysOpen>*/}
                 <Accordion className={"accordion accordion-preview"}>
-                {qa && qa.map((item) => (
+                {!!qa.length && qa.map((item) => (
                     <div className={'item'} key={item.id}>
                         <Accordion.Item eventKey={(item.id-1).toString()}>
                             <Accordion.Header><Icon icon='qa' size={28} color="#0460A9" className={'qa-icon'}/>{item.question}</Accordion.Header>

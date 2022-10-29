@@ -3,7 +3,8 @@ import {number, string} from "prop-types";
 export type bonusCardType = {
     id: number,
     casinoName: string,
-    bonusType: string,
+    bgColor: string,
+    bonusType: number,
     upToPercent: number,
     upToSum: number,
     img: string,

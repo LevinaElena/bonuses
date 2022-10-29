@@ -40,6 +40,17 @@ $dir-negative: right;
   --swiper-pagination-bullet-height: 1.2rem;
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 1.2rem;
+//header
+  --bs-navbar-color: $dark-blue-gradient;
+
+//accordion
+  --bs-accordion-active-bg: white;
+  --bs-accordion-border-color: white;
+  --bs-accordion-border-width: 0;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-button-focus-border-color: white;
+  --bs-accordion-btn-focus-box-shadow: none;
 
   .admin-bar {
     --header-offset: 32px;

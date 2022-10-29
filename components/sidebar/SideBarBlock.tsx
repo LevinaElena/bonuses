@@ -1,10 +1,7 @@
 import {FC} from "react";
-import Image from "next/image";
 import styles from '../../styles/Faq.module.scss'
-import SideBar from "./SideBar";
-import {number, string} from "prop-types";
 import {listItemsType} from "../../types";
-import SideBarItem from "./SideBar";
+import SideBarItem from "./SideBarItem";
 
 type SideBarBlockProps = {
     sideBarName: string,

@@ -3,7 +3,11 @@ import {NextApiRequest, NextApiResponse} from 'next';
 import {bonuses} from "./data/bonuses";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'GET') {
-    res.status(200).json(bonuses);
-  };
+  const {
+    query: { type },
+    method,
+  } = req;
+  if (method === 'GET') {
+    res.status(200).json(bonuses.filter(item => item.bonusType === +type));
+  }
 }
