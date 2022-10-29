@@ -8,22 +8,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
+import {  ChevronRight, ChevronLeft } from 'react-bootstrap-icons';
 
 const Slider:FC = () => {
     const swiperRef = useRef<SwiperType>();
     const { data, pending, error } = useAppSelector((state) => state.bonus);
     return (
         <div className={styles.swiper_container}>
-            <div>
-                <button onClick={() => swiperRef.current?.slidePrev()} className={'swiper-button-prev'}></button>
-            </div>
+                <ChevronLeft style={{position: 'absolute', left: 0}} size={72} onClick={() => swiperRef.current?.slidePrev()} />
         <Swiper
             slidesPerView={5}
             slidesPerGroup={5}
             spaceBetween={2}
             pagination={{clickable: true, bulletElement: 'div'}}
             //createElements={true}
-            navigation={{nextEl:'.swiper-button-next', prevEl: '.swiper-button-prev',}}
+            // navigation={{nextEl:'.swiper-button-next', prevEl: '.swiper-button-prev',}}
             keyboard={true}
             onBeforeInit={(swiper) => {
                 swiperRef.current = swiper;
@@ -59,9 +58,7 @@ const Slider:FC = () => {
                 </SwiperSlide>
             ))}
         </Swiper>
-            <div>
-                <button onClick={() => swiperRef.current?.slideNext()} className={'swiper-button-next'}></button>
-            </div>
+                <ChevronRight style={{position: 'absolute', right: '0'}}  size={72} onClick={() => swiperRef.current?.slideNext()}/>
         </div>
     )};
 

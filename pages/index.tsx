@@ -1,14 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Heading from "../components/Heading";
-import {bonusCardType} from "../types";
 import styles from '../styles/Home.module.scss'
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {getBonuses} from '../redux/bonusSlice';
-import {makeStore, RootState, wrapper} from "../redux/store";
+import {wrapper} from "../redux/store";
 import { NextPage } from 'next'
 import Slider from "../components/home/Slider";
-import {useDispatch, useSelector} from "react-redux";
-
 
 const Home:NextPage = () => {
  const dispatch = useAppDispatch();
@@ -46,7 +43,5 @@ Home.getInitialProps = wrapper.getInitialPageProps(
             await dispatch(getBonuses(1));
         }
 );
-
-
 
 export default Home;

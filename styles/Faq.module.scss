@@ -17,6 +17,13 @@
 .right {
   width: 22.2rem;
 }
+.bonus_hover {
+  width: 100%;
+  background: $light-blue-gradient;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: end;
+}
 
 .wrapper {
   display: flex;
