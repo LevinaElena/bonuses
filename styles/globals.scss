@@ -12,7 +12,6 @@ body {
   font-family: 'Lato', 'Roboto', sans-serif;
   font-size: 62.5%;
   background-color: $grey;
-
 }
 
 a {
@@ -32,9 +31,33 @@ h4 {
   font-weight: 400;
 }
 
-.container {
-  width: 144rem;
+.container_bonus {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 366px) {
+  .container_bonus {max-width: 320px;}
+}
+@media (min-width: 576px) {
+  .container_bonus {max-width: 540px;}
+}
+@media (min-width: 768px) {
+  .container_bonus {max-width: 720px;}
+}
+@media (min-width: 992px) {
+  .container_bonus {max-width: 960px;}
+}
+@media (min-width: 1200px) {
+  .container_bonus {max-width: 1140px;}
+}
+@media (min-width: 1400px) {
+  .container_bonus {max-width: 1320px;}
+}
+@media (min-width: 1700px) {
+  .container_bonus {max-width: 1440px;}
 }
 
 .navbar {
@@ -52,47 +75,6 @@ h4 {
   stroke-width:0.2rem;
 }
 
-.main-info {
-  width: 16.7rem;
-}
-
-.big-text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 5.4rem;
-  color: $very-dark-blue;
-  line-height: 90%;
-  margin-bottom: 0;
-}
-
-.right-text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  text-align: right;
-  color: $very-dark-blue;
-  margin-bottom: 0;
-  line-height: 80%;
-}
-
-.additional-text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 21px;
-  color: $very-dark-blue;
-  margin-bottom: 0;
-  line-height: 2.5rem;
-}
-
-.bottom-text {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  text-align: center;
-  color: #0460A9;
-  line-height: 16px;
-  margin-bottom: 0;
-}
-
 .btn {
   font-weight: 700;
   font-size: 1.6rem;
@@ -101,11 +83,10 @@ h4 {
   background: $btn-bg;
   border-radius: 100px;
   width: 175px;
-  //margin-left: 1.8rem;
 }
 
 .info {
-  margin: 0.6rem;
+  margin: 0.4rem;
 }
 
 * {
@@ -151,19 +132,38 @@ h4 {
   width: 100%;
 }
 
+@media (min-width: 366px) {
+  .mySwiper {width: 320px;}
+}
+@media (min-width: 576px) {
+  .mySwiper {width: 320px;}
+  .chevron-right {right: 10px;}
+}
+@media (min-width: 768px) {
+  .mySwiper {width: 100%;}
+  }
+
 .swiper-wrapper {
  margin-bottom: 4rem;
 }
 
-.swiper-button-next, .swiper-button-prev  {
-  border: none;
-  background-color: $grey;
+//.swiper-button-next, .swiper-button-prev  {
+//  border: none;
+//  background-color: $grey;
+//}
+//
+//.swiper-button-next:after, .swiper-button-prev:after {
+//  content: '';
+//  color: black;
+//  font-weight: 900;
+//
+//}
+.chevron-left {
+left: -60px;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-  content: '';
-  color: black;
-  font-weight: 900;
+.chevron-right {
+right: 60px;
 }
 
 .swiper-pagination-bullet {
@@ -176,6 +176,11 @@ h4 {
    }
 }
 
+@media (max-width: 768px) {
+  .swiper-pagination {
+    display: none;
+  }
+}
 //accordion
 
 .accordion-header {
@@ -230,10 +235,6 @@ h4 {
   box-shadow: none;
 }
 
-button:focus:not(:focus-visible) {
-
-}
-
   .accordion-preview .collapse:not(.show) {
     display: block;
   }
@@ -251,9 +252,5 @@ button:focus:not(:focus-visible) {
     height: 100%;
     width: 100%;
     content: "";
-    //background: linear-gradient(to top,
-    //        rgba(255,255,255, 1) 5%,
-    //        rgba(255,255,255, 0) 60%
-    //);
     pointer-events: none; /* so the text is still selectable */
   }

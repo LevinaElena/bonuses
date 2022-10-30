@@ -4,7 +4,7 @@ import {
 } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { RootState } from './store';
-import { listItemsType} from "../types";
+import { listItemsType} from "../types/sidebarItemsType";
 
 export type casinoState = {
     data: Array<listItemsType>;

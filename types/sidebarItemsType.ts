@@ -1,0 +1,16 @@
+export type listItemsType = {
+    id: number,
+    name: string,
+    bgColor: string,
+    rating: number,
+    payout: number,
+    img: string,
+    isExclusive: boolean,
+    upToPercent: number,
+    upToSum: number,
+    freeSpins: number,
+    wagering: number,
+    cashout: number,
+    company: string,
+    RTP: number,
+}

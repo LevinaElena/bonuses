@@ -2,7 +2,7 @@ import {GetStaticProps} from "next";
 import useSWR from 'swr';
 import axios from 'axios';
 import { NextPage } from 'next'
-import {quesAnswType} from "../types";
+import {quesAnswType} from "../types/questAnswType";
 import FaqHeader from "../components/faq/FaqHeader";
 import FaqBody from "../components/faq/FaqBody";
 import styles from "../styles/Faq.module.scss";
@@ -16,14 +16,12 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 
-    console.log(process.env.API_HOST)
-
     const { data: casino } = useSWR(`http://localhost:3000/api/sidebar/`,fetcher);
     const { data: topBonuses } = useSWR('http://localhost:3000/api/topbonuses',fetcher);
     const { data: games } = useSWR('http://localhost:3000/api/topgames',fetcher);
 
     return (
-        <div className={styles.faq_body}>
+        <div className={styles.container_faq}>
             <div className={styles.wrapper}>
                  <FaqHeader/>
                  <FaqBody qa={qa}/>

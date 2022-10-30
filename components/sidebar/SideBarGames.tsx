@@ -1,7 +1,7 @@
 import styles from "../../styles/Faq.module.scss";
 import {FC} from "react";
 import Image from "next/image";
-import {listItemsType} from "../../types";
+import {listItemsType} from "../../types/sidebarItemsType";
 import Icon from "../icon/Icon";
 
 type SideBarGamesProps = {

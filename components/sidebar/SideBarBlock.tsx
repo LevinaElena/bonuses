@@ -1,6 +1,6 @@
 import {FC} from "react";
 import styles from '../../styles/Faq.module.scss'
-import {listItemsType} from "../../types";
+import {listItemsType} from "../../types/sidebarItemsType";
 import SideBarItem from "./SideBarItem";
 
 type SideBarBlockProps = {

@@ -8,9 +8,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
    <Layout>
        <Head>
        </Head>
-           <div className={'container'}>
+           {/*<div className={'container_bonus'}>*/}
                 <Component {...pageProps} />
-           </div>
+           {/*</div>*/}
    </Layout>
 
 );

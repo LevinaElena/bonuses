@@ -12,7 +12,7 @@ const Home:NextPage = () => {
  const [type, setType] = useState(1);
 
     return (
-    <>
+    <div className={'container_bonus'}>
         <div className={styles.description}>
             <h2 className={styles.bonus_h2}>
                 Best Bonuses Lorem Ipsum
@@ -34,7 +34,7 @@ const Home:NextPage = () => {
         <div className={styles.single_button}>
             <button className={styles.btn_blue_gradient}>Show All No Deposit Bonuses</button>
         </div>
-    </>)
+    </div>)
 };
 
 Home.getInitialProps = wrapper.getInitialPageProps(

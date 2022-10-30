@@ -19,3 +19,13 @@ $dark-blue-gradient: linear-gradient(180deg, #2A577E 0%, #12395D 99.25%);
 //fonts
 $main-font: 'Lato', sans-serif;
 $inner-font: 'Roboto', sans-serif;
+
+@mixin btn-blue {
+  width: 23.2rem;
+  min-height: 3.4rem;
+  border-radius: 5rem;
+  font-size: 16px;
+  font-family: $main-font;
+  text-transform: capitalize;
+  height: fit-content;
+}

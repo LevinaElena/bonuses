@@ -1,7 +1,7 @@
 import Image from "next/image";
-import {bonusCardType} from "../../types";
+import {bonusCardType} from "../../types/bonusCardType";
 import {FC} from "react";
-import styles from '../../styles/Home.module.scss';
+import styles from '../../styles/Card.module.scss';
 import StyledHeaderDiv from "../../utils/bgCardHeader";
 import {bonusType} from "../../utils/common";
 
@@ -15,7 +15,7 @@ const Bonus:FC<bonusCardProps> = ({bonus}) => {
         <div className={styles.card_item}>
             <div className={styles.card_header}>
                 <StyledHeaderDiv color={bonus.bgColor}>
-                    <Image src={bonus.img} alt={bonus.casinoName} width={170} height={58}/>
+                    <img src={bonus.img} alt={bonus.casinoName}/>
                     <h4 className="card-header-text">{bonus.casinoName} - Review</h4>
                 </StyledHeaderDiv>
             </div>
@@ -28,15 +28,15 @@ const Bonus:FC<bonusCardProps> = ({bonus}) => {
                     </svg>
                 </div>
                 <div className={styles.card_middle_part}>
-                    <div className='main-info'>
-                        <p className='right-text'>{bonus.upToPercent}% up to</p>
-                        <p className='big-text'>${bonus.upToSum}</p>
-                        <p className='additional-text'>+{bonus.freeSpinsCount} Free Spins</p>
-                        <p className="bottom-text">on {bonus.slotName}</p>
+                    <div className={styles.main_info}>
+                        <p className={styles.right_text}>{bonus.upToPercent}% up to</p>
+                        <p className={styles.big_text}>${new Intl.NumberFormat("en").format(bonus.upToSum)}</p>
+                        <p className={styles.additional_text}>+{bonus.freeSpinsCount} Free Spins</p>
+                        <p className={styles.bottom_text}>on {bonus.slotName}</p>
                     </div>
                 </div>
-                <div className="card-bottom-no-radius row">
-                    <div className='col-9 pb-lg-4'>
+                <div className={styles.card_bottom_no_radius}>
+                    <div className={`col-9 ${styles.play}`}>
                         <a href="#" className="btn btn-warning">PLAY</a>
                     </div>
                     <div className={`col-3 ${styles.flag}`}>

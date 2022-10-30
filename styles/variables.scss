@@ -8,16 +8,6 @@ $breakpoints: (
         "xxxl" : 1700px
 );
 
-$container-max-widths: (
-        xs: 366px,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px,
-        xxl: 1400px,
-        xxxl: 1700px
-);
-
 $dir: left;
 $dir-negative: right;
 
@@ -50,7 +40,6 @@ $dir-negative: right;
   --bs-accordion-inner-border-radius: 0;
   --bs-accordion-btn-focus-box-shadow: none;
   --bs-accordion-button-focus-border-color: white;
-  --bs-accordion-btn-focus-box-shadow: none;
 
   .admin-bar {
     --header-offset: 32px;
@@ -64,22 +53,6 @@ $dir-negative: right;
 html[dir="rtl"] {
   --math: -1;
 }
-
-
-////colors
-//$very-dark-violet: #1E0D38;
-//$mega-dark-blue: #051D33;
-//$very-dark-blue: #0C2B48;
-//$middle-dark-blue: #11314F;
-//$dark-blue: #12395D;
-//$middle-blue-first: #29557C;
-//$middle-blue-second: #2A577E;
-//$blue: #0460A9;
-//$light-blue: #1D8EFA;
-//$btn-bg: #FAC515;
-//$yellow-gradient: linear-gradient(267.92deg, #FDC93F 15.13%, #F8B032 100.03%);
-//$blue-gradient: linear-gradient(274.15deg, #2A577E 3.47%, #12395D 66.48%);
-//$light-blue-gradient: linear-gradient(55.31deg, #F1FDFF 16.56%, #FFFFFF 91.12%);
 
 //Color Classes
 .highlight {

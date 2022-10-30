@@ -13,6 +13,8 @@ const StyledHeaderDiv = styled.div<{color: string}>`
   letter-spacing: 0.02em;
   color: white;
   padding: 1rem 0 0 0;
+  border-radius: 6px 6px 0 0;
+  position: relative;
   background-color: ${({color}) => color};`
 
 export default StyledHeaderDiv;

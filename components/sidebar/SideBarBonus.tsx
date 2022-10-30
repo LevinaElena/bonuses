@@ -3,7 +3,7 @@ import styles from "../../styles/Faq.module.scss";
 import StyledDiv from "../../utils/bgSidebar";
 import Image from "next/image";
 import Icon from "../icon/Icon";
-import {listItemsType} from "../../types";
+import {listItemsType} from "../../types/sidebarItemsType";
 import IconAndSum from "./IconAndSum";
 
 type SideBarBonusesProps = {
@@ -46,8 +46,8 @@ const SideBarBonus:FC<SideBarBonusesProps> = ({topBonus}) => {
                     <div>
                         <IconAndSum icon={'money'} sum={`${topBonus.cashout}`} text={'Max. Cashout'}/>
                     </div>
-                    <div>
-
+                    <div className={styles.button_container}>
+                        <button className={styles.button_cropped}>PLAY</button>
                     </div>
                 </li>
             }

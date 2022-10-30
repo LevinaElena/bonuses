@@ -1,6 +1,6 @@
 import {FC} from "react";
 
-import {listItemsType} from "../../types";
+import {listItemsType} from "../../types/sidebarItemsType";
 import SideBarBonus from "./SideBarBonus";
 
 type SideBarBonusesProps = {
@@ -8,13 +8,14 @@ type SideBarBonusesProps = {
 }
 
 const SideBarBonuses:FC<SideBarBonusesProps> = ({data}) => {
-            return (
-                <>
-                    {data && data.map((item) => {
-                      return <SideBarBonus key={item.id} topBonus={item}/>
-                    })}
-                </>
-            )
+     return (
+          <>
+              {data && data.map((item) => {
+                    return <SideBarBonus key={item.id} topBonus={item}/>
+                })
+              }
+          </>
+     )
 };
 
 export default SideBarBonuses;

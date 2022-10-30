@@ -182,14 +182,14 @@ export const bonuses = [
     },
     {
         id: 16,
-        casinoName: 'Ripper Casino',
-        bgColor: '#271433',
+        casinoName: 'Fair Go Casino',
+        bgColor: '#161616',
         bonusType: bonus_type.welcome_bonus,
         upToPercent: 400,
-        upToSum: 2000,
-        img: '/ripper.png',
+        upToSum: 8888,
+        img: '/fairGo.png',
         freeSpinsCount: 100,
-        exclusive: true,
+        exclusive: false,
         slotName: "Cleopatra's Gold"
     },
     {
@@ -206,14 +206,14 @@ export const bonuses = [
     },
     {
         id: 18,
-        casinoName: 'Fair Go Casino',
-        bgColor: '#161616',
+        casinoName: 'Ripper Casino',
+        bgColor: '#271433',
         bonusType: bonus_type.welcome_bonus,
         upToPercent: 400,
-        upToSum: 8888,
-        img: '/fairGo.png',
+        upToSum: 2000,
+        img: '/ripper.png',
         freeSpinsCount: 100,
-        exclusive: false,
+        exclusive: true,
         slotName: "Cleopatra's Gold"
     },
     {

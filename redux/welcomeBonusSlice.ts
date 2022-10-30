@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { RootState } from './store'
-import {bonusCardType} from "../types";
+import {bonusCardType} from "../types/bonusCardType";
 
 // declaring the types for our state
 export type bonusState = {

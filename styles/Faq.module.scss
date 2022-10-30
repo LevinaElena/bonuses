@@ -3,6 +3,22 @@
 .faq_body {
   display: grid;
   grid-template-columns:110rem 30.2rem;
+  background-color: white;
+  margin-top: 10rem;
+  margin-right: 4rem;
+}
+
+.container_faq {
+    max-width: 140rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1400px) {
+  .container_faq {flex-wrap: nowrap;}
 }
 
 .left {
@@ -23,12 +39,14 @@
   padding: 1.5rem 0 1.5rem 1.5rem;
   display: flex;
   justify-content: end;
+  gap: 0.5rem;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-right: 2rem;
+  margin-right: 1rem;
+  max-width: 109rem;
 }
 
 .heading {
@@ -90,7 +108,8 @@
 }
 
 .side_bar {
-  width: 100%;
+  max-width: 30.2rem;
+  padding-top: 6rem;
 }
 
 .side_bar_item{
@@ -118,7 +137,7 @@
   font-weight: 700;
   font-size: 2.1rem;
   line-height: 75%;
-  text-align: center;
+  text-align: left;
   letter-spacing: -0.05em;
   color: $dark-blue;
   margin-right: 0.8rem;
@@ -129,7 +148,7 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 120%;
-  text-align: center;
+  text-align: left;
   color: $dark-blue;
   letter-spacing: normal;
 }
@@ -197,13 +216,8 @@
   padding-top: 0.4rem;
   overflow: hidden;
   left: -37%;
-  //right: -14.98%;
   top: 16%;
-  //bottom: -7.75%;
-  //-webkit-transform: rotate(-45deg);
-  //-moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
- // -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -211,7 +225,29 @@
 }
 
 .exclusive {
-    color: $exclusive;
-    font-weight: 600;
-    font-size: 0.9rem;
+  color: $exclusive;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.button_cropped {
+  width: 87px;
+  height: 32px;
+  border-radius: 10rem 0px 0px 10rem;
+  background: $yellow-gradient;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: $mega-dark-blue;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
