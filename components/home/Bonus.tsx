@@ -24,7 +24,7 @@ const Bonus:FC<bonusCardProps> = ({bonus}) => {
                     {bonus.exclusive && <div className="ribbon"><span>EXCLUSIVE</span></div>}
                     <div className={styles.card_type}>{bonusType[bonus.bonusType]}</div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <line x1="86" y1="5" x2="156" y2="5" className={'line'}/>
+                        <line x1="86" y1="5" x2="156" y2="5" className={styles.line}/>
                     </svg>
                 </div>
                 <div className={styles.card_middle_part}>

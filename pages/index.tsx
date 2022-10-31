@@ -1,18 +1,18 @@
 import React, {useState} from "react";
 import Heading from "../components/Heading";
 import styles from '../styles/Home.module.scss'
-import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {useAppDispatch} from '../redux/hooks';
 import {getBonuses} from '../redux/bonusSlice';
-import {wrapper} from "../redux/store";
+import {AppDispatch, wrapper} from "../redux/store";
 import { NextPage } from 'next'
 import Slider from "../components/home/Slider";
 
 const Home:NextPage = () => {
- const dispatch = useAppDispatch();
+ const appDispatch = useAppDispatch();
  const [type, setType] = useState(1);
 
     return (
-    <div className={'container_bonus'}>
+    <div className={styles.container_bonus}>
         <div className={styles.description}>
             <h2 className={styles.bonus_h2}>
                 Best Bonuses Lorem Ipsum
@@ -22,13 +22,13 @@ const Home:NextPage = () => {
         <div className={styles.tabs_group}>
             <button className={type === 1 ? styles.btn_blue__active : styles.btn_blue} onClick={() => {
                 setType(1);
-                dispatch(getBonuses(1))}}>No deposit bonus</button>
+                appDispatch(getBonuses(1))}}>No deposit bonus</button>
             <button className={type === 2 ? styles.btn_blue__active : styles.btn_blue} onClick={() => {
                 setType(2);
-                dispatch(getBonuses(2))}}>Welcome bonus</button>
+                appDispatch(getBonuses(2))}}>Welcome bonus</button>
             <button className={type === 3 ? styles.btn_blue__active : styles.btn_blue} onClick={() => {
                 setType(3);
-                dispatch(getBonuses(3))}}>Free Spins bonus</button>
+                appDispatch(getBonuses(3))}}>Free Spins bonus</button>
         </div>
         <Slider/>
         <div className={styles.single_button}>
@@ -38,7 +38,7 @@ const Home:NextPage = () => {
 };
 
 Home.getInitialProps = wrapper.getInitialPageProps(
-    ({ dispatch }) =>
+    ({ dispatch}) =>
         async () => {
             await dispatch(getBonuses(1));
         }

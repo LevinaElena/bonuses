@@ -1,6 +1,6 @@
 import {Accordion} from "react-bootstrap";
 import {FC} from "react";
-import {quesAnswType} from "../../types/questAnswType";
+import {quesAnswType} from "../../types/types";
 import styles from '../../styles/Faq.module.scss';
 import Icon from "../icon/Icon";
 

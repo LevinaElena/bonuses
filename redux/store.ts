@@ -1,8 +1,7 @@
 import {Action, AnyAction, combineReducers, configureStore, ThunkAction} from '@reduxjs/toolkit';
-import { composeWithDevTools } from "redux-devtools-extension";
-import { createWrapper, HYDRATE } from 'next-redux-wrapper';
+import {composeWithDevTools} from "redux-devtools-extension";
+import {createWrapper, HYDRATE} from 'next-redux-wrapper';
 import bonusReducer from './bonusSlice';
-import casinoReducer from './casinoSlice';
 import {applyMiddleware} from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 
@@ -10,7 +9,7 @@ const middleware = [thunk];
 
 const combinedReducer = combineReducers({
     bonus: bonusReducer,
-    casino: casinoReducer,
+    /*TBD other reducers*/
 });
 
 const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
@@ -27,18 +26,17 @@ const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) =
 
 export const makeStore = () =>
     configureStore({
-        reducer,
-    }, );
+            reducer
+        },
+    );
 
 type Store = ReturnType<typeof makeStore>;
 
 export type AppDispatch = Store['dispatch'];
 export type RootState = ReturnType<Store['getState']>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-    ReturnType,
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType,
     RootState,
     unknown,
-    Action<string>
-    >;
+    Action<string>>;
 
-export const wrapper = createWrapper(makeStore, { debug: true });
+export const wrapper = createWrapper(makeStore, {debug: true});

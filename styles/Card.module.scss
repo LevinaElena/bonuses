@@ -22,6 +22,7 @@
   border-radius: 0.6rem 0.6rem 0.6rem 0;
   border: none;
   background-color: $very-dark-blue;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card_header {
@@ -32,7 +33,7 @@
 }
 
 .card_type {
-  font-family: 'Roboto', sans-serif;
+
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.3rem;
@@ -46,16 +47,13 @@
 .card_middle_part {
   display: flex;
   justify-content: center;
+  color: $very-dark-blue;
 }
 
 .flag {
   padding-top: 0.3rem;
   padding-right: 0.3rem;
   text-align: end;
-}
-
-.play{
-
 }
 
 .card_bottom_no_radius{
@@ -72,41 +70,40 @@
 }
 
 .right_text {
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   text-align: right;
-  color: $very-dark-blue;
   margin-bottom: 0;
   margin-right: 0.8rem;
   line-height: 80%;
 }
 
 .big_text {
-  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 5.4rem;
-  color: $very-dark-blue;
   line-height: 90%;
   margin-bottom: 0;
 }
 
 .additional_text {
-  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 2.1rem;
   text-align: center;
-  color: $very-dark-blue;
   margin-bottom: 0;
   line-height: 2.5rem;
 }
 
 .bottom_text {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   text-align: center;
-  color: #0460A9;
+  color: $blue;
   line-height: 1.6rem;
   margin-bottom: 0;
 }
+
+.line {
+  stroke: $blue;
+  stroke-width:0.2rem;
+}
+
 

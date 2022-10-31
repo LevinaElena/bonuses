@@ -2,7 +2,6 @@ import {FC} from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import {Button, Form} from "react-bootstrap";
 import Image from "next/image";
 
 const Header: FC = () => (

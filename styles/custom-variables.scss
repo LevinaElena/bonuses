@@ -28,4 +28,29 @@ $inner-font: 'Roboto', sans-serif;
   font-family: $main-font;
   text-transform: capitalize;
   height: fit-content;
+  margin: 0 0.3rem 0 0.3rem;
+}
+
+@mixin swiper-nav {
+  content: '';
+  color: black;
+  font-weight: 900;
+  position: absolute;
+}
+
+@mixin ribbon {
+  background: $yellow-gradient;
+  position: absolute;
+  white-space: nowrap;
+  width: 20rem;
+  height: 1.8rem;
+  padding-top: 0.4rem;
+  overflow: hidden;
+  left: -33%;
+  top: 18%;
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  vertical-align: center;
 }

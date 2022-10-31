@@ -14,6 +14,10 @@ body {
   background-color: $grey;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -22,42 +26,13 @@ a {
 h3 {
   font-weight: 400;
   color: $very-dark-violet;
-  font-size: 20px;
+  font-size: 1.5rem;
   line-height: 138.8%;
 }
 
 h4 {
   color: white;
   font-weight: 400;
-}
-
-.container_bonus {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media (min-width: 366px) {
-  .container_bonus {max-width: 320px;}
-}
-@media (min-width: 576px) {
-  .container_bonus {max-width: 540px;}
-}
-@media (min-width: 768px) {
-  .container_bonus {max-width: 720px;}
-}
-@media (min-width: 992px) {
-  .container_bonus {max-width: 960px;}
-}
-@media (min-width: 1200px) {
-  .container_bonus {max-width: 1140px;}
-}
-@media (min-width: 1400px) {
-  .container_bonus {max-width: 1320px;}
-}
-@media (min-width: 1700px) {
-  .container_bonus {max-width: 1440px;}
 }
 
 .navbar {
@@ -68,11 +43,6 @@ h4 {
   font-weight: 600;
   font-size: 18px;
   line-height: 21px;
-}
-
-.line {
-  stroke: $blue;
-  stroke-width:0.2rem;
 }
 
 .btn {
@@ -89,37 +59,15 @@ h4 {
   margin: 0.4rem;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .ribbon-parent {
-  overflow: hidden; /* required */
-  position: relative; /* required  for demo*/
+  overflow: hidden;
+  position: relative;
   height: 6.3rem;
   width: 100%;
 }
 
 .ribbon {
-  background: $yellow-gradient;
-  position: absolute;
-  white-space: nowrap;
-  width: 20rem;
-  height: 1.8rem;
-  padding-top: 0.4rem;
-  overflow: hidden;
-  left: -33%;
-  //right: -14.98%;
-  top: 18%;
-  //bottom: -7.75%;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  vertical-align: center;
+  @include ribbon;
 }
 
 .ribbon span {
@@ -128,42 +76,28 @@ h4 {
   font-size: 0.9rem;
 }
 
+//swiper
+
 .mySwiper {
   width: 100%;
 }
-
-@media (min-width: 366px) {
-  .mySwiper {width: 320px;}
-}
-@media (min-width: 576px) {
-  .mySwiper {width: 320px;}
-  .chevron-right {right: 10px;}
-}
-@media (min-width: 768px) {
-  .mySwiper {width: 100%;}
-  }
 
 .swiper-wrapper {
  margin-bottom: 4rem;
 }
 
-//.swiper-button-next, .swiper-button-prev  {
-//  border: none;
-//  background-color: $grey;
-//}
-//
-//.swiper-button-next:after, .swiper-button-prev:after {
-//  content: '';
-//  color: black;
-//  font-weight: 900;
-//
-//}
-.chevron-left {
-left: -60px;
+.swiper-button-next, .swiper-button-prev  {
+  border: none;
+  background: none;
 }
 
-.chevron-right {
-right: 60px;
+.swiper-button-prev:after {
+  @include swiper-nav;
+  left: -40px;
+}
+
+.swiper-button-next:after {
+  @include swiper-nav;
 }
 
 .swiper-pagination-bullet {
@@ -175,13 +109,10 @@ right: 60px;
      background: $blue-gradient !important;
    }
 }
-
 @media (max-width: 768px) {
-  .swiper-pagination {
-    display: none;
-  }
+  .swiper-pagination {display: none;}
 }
-//accordion
+  //accordion
 
 .accordion-header {
   border: none;
@@ -235,22 +166,57 @@ right: 60px;
   box-shadow: none;
 }
 
-  .accordion-preview .collapse:not(.show) {
-    display: block;
-  }
-  .accordion-preview .collapse:not(.show) .accordion-body {
-    max-height: 8.4rem;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 1rem;
-  }
+.accordion-preview .collapse:not(.show) {
+  display: block;
+}
+.accordion-preview .collapse:not(.show) .accordion-body {
+  max-height: 8.4rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
 
-  .accordion-preview .collapse:not(.show) .accordion-body:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    content: "";
-    pointer-events: none; /* so the text is still selectable */
-  }
+.accordion-preview .collapse:not(.show) .accordion-body:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  pointer-events: none;
+}
+
+@media (min-width: 366px) {
+  .mySwiper {width: 242px;}
+  .swiper-button-prev:after { left: 0;}
+}
+@media (min-width: 576px) {
+  .mySwiper {width: 242px;}
+  .swiper-button-prev:after { left: 80px;}
+  .swiper-button-next:after { left: -80px;}
+}
+@media (min-width: 768px) {
+  .mySwiper {width: 550px;}
+  .swiper-button-prev:after { left: 40px;}
+  .swiper-button-next:after { left: -60px;}
+}
+@media (min-width: 992px) {
+  h3 {font-size: 2rem;}
+  .mySwiper {width: 780px;}
+}
+@media (min-width: 1200px) {
+  .mySwiper {width: 1030px;}
+  .swiper-button-prev:after { left: 10px;}
+  .swiper-button-next:after { left: 20px;}
+}
+@media (min-width: 1400px) {
+  .mySwiper {width: 1320px;}
+  .swiper-button-prev:after { left: -40px;}
+  .swiper-button-next:after { left: 20px;}
+}
+@media (min-width: 1700px) {
+  .mySwiper {width: 100%;}
+  .swiper-button-prev:after { left: -40px;}
+  .swiper-button-next:after { left: 20px;}
+}
+

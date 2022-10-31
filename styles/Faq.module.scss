@@ -4,8 +4,9 @@
   display: grid;
   grid-template-columns:110rem 30.2rem;
   background-color: white;
-  margin-top: 10rem;
+  margin-top: 4rem;
   margin-right: 4rem;
+
 }
 
 .container_faq {
@@ -45,8 +46,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
+  margin: 6.5rem 1rem 0 0;
   max-width: 109rem;
+  background-color: white;
+  padding: 2.8rem;
 }
 
 .heading {
@@ -109,7 +112,7 @@
 
 .side_bar {
   max-width: 30.2rem;
-  padding-top: 6rem;
+  padding-top: 3rem;
 }
 
 .side_bar_item{
