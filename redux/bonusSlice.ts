@@ -11,7 +11,6 @@ export type bonusState = {
     data: Array<bonusCardType>
     pending: boolean;
     error: boolean;
-
 };
 
 const initialState: bonusState = {

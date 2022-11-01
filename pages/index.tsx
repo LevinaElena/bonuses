@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 import styles from '../styles/Home.module.scss'
 import {useAppDispatch} from '../redux/hooks';
 import {getBonuses} from '../redux/bonusSlice';
-import {AppDispatch, wrapper} from "../redux/store";
+import {wrapper} from "../redux/store";
 import { NextPage } from 'next'
 import Slider from "../components/home/Slider";
 

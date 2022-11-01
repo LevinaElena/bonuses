@@ -16,7 +16,7 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 
-    const { data: casino } = useSWR(`http://localhost:3000/api/sidebar/`,fetcher);
+    const { data: casino } = useSWR(`http://localhost:3000/api/topcasinos/`,fetcher);
     const { data: topBonuses } = useSWR('http://localhost:3000/api/topbonuses',fetcher);
     const { data: games } = useSWR('http://localhost:3000/api/topgames',fetcher);
 
@@ -39,13 +39,9 @@ export const getStaticProps:GetStaticProps = async () => {
     const response = await fetch(`${process.env.API_HOST}/faq/`);
     const data = await response.json();
     if (!data) {
-        return {
-            notFound: true,
-        }
+        return { notFound: true,}
     }
-    return {
-        props: {qa: data}
-    }
+    return {props: {qa: data}}
 }
 
 export default FaqBlock;

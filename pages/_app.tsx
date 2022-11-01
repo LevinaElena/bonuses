@@ -7,10 +7,9 @@ import {wrapper} from "../redux/store";
 const MyApp = ({ Component, pageProps }: AppProps) => (
    <Layout>
        <Head>
+
        </Head>
-           {/*<div className={'container_bonus'}>*/}
-                <Component {...pageProps} />
-           {/*</div>*/}
+       <Component {...pageProps} />
    </Layout>
 
 );

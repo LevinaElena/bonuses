@@ -1,4 +1,3 @@
-// Icon.tsx
 import IcoMoon, { IconProps } from "react-icomoon";
 import iconSet from "./selection.json";
 

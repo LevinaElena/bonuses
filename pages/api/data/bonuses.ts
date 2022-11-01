@@ -1,4 +1,4 @@
-import {bonus_type} from "./enums";
+import {bonus_type} from "../../../utils/enums";
 
 export const bonuses = [
     {

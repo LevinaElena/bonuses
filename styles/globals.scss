@@ -1,6 +1,6 @@
 @use 'mixins' as *;
 @import "variables.scss";
-@import "custom-variables";
+@import "variables_custom";
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -76,7 +76,7 @@ h4 {
   font-size: 0.9rem;
 }
 
-//swiper
+//swiper/////////////////////////////////////////
 
 .mySwiper {
   width: 100%;
@@ -112,24 +112,13 @@ h4 {
 @media (max-width: 768px) {
   .swiper-pagination {display: none;}
 }
-  //accordion
-
-.accordion-header {
-  border: none;
-  text-transform: capitalize;
-}
-
-.accordion-button {
-  font-weight: 600;
-  font-size: 1.8rem;
-  line-height: 100%;
-  color: $blue;
-}
+//accordion ////////////////////////////////////////
 
 .accordion {
   display: grid;
-  grid-template-columns:  repeat(auto-fill, minmax(30rem, 1fr));
-  column-gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  column-gap: 3rem;
+  row-gap: 2.8rem;
   background-color: white;
   box-shadow: none;
 }
@@ -145,9 +134,27 @@ h4 {
   padding: 0;
 }
 
-.qa-icon {
-  margin-right: 0.8rem;
+.accordion-header {
+  border: none;
+  text-transform: capitalize;
 }
+
+.accordion-body {
+  padding: 0;
+  margin-top: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accordion-button {
+  padding: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 100%;
+  color: $blue;
+  text-transform: capitalize;
+}
+
 .accordion-button::after {
   display: none;
 }
@@ -157,12 +164,12 @@ h4 {
   background-color: white;
 }
 
-.accordion-button:not(.collapsed) {
-  background-color: white;
+.accordion-button:focus {
   box-shadow: none;
 }
 
-.accordion-button:focus {
+.accordion-button:not(.collapsed) {
+  background-color: white;
   box-shadow: none;
 }
 
@@ -170,10 +177,18 @@ h4 {
   display: block;
 }
 .accordion-preview .collapse:not(.show) .accordion-body {
-  max-height: 8.4rem;
+  max-height: 7.4rem;
   position: relative;
   overflow: hidden;
+  text-overflow: ellipsis;
   padding-bottom: 1rem;
+}
+
+.collapsing {
+  height: 74px;
+  overflow: hidden;
+  transition: height 0.35s ease;
+  transition-delay: 0s;
 }
 
 .accordion-preview .collapse:not(.show) .accordion-body:after {

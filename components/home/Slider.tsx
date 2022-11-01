@@ -22,12 +22,9 @@ const Slider:FC = () => {
                 slidesPerGroup={5}
                 spaceBetween={2}
                 pagination={{clickable: true, bulletElement: 'div'}}
-                createElements={true}
                 navigation={{nextEl:'.swiper-button-next', prevEl: '.swiper-button-prev',}}
                 keyboard={true}
-                onBeforeInit={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
+                onBeforeInit={(swiper) => {swiperRef.current = swiper;}}
                 breakpoints={{
                     366: {slidesPerView: 1, spaceBetween: 0, slidesPerGroup:1},
                     576: {slidesPerView: 1, spaceBetween: 0, slidesPerGroup:1},

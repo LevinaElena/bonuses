@@ -11,7 +11,7 @@ type SideBarCasinosProps = {
 
 const SideBarCasinos:FC<SideBarCasinosProps> = ({data}) => {
     return (
-        <>
+        < div className={styles.sb_block}>
             {data && data.map((item) => (
                 <ul className={`list-group list-group-horizontal ${styles.side_bar_item}`} key={item.id}>
                     <li className={`list-group-item ${styles.left}`}>
@@ -26,7 +26,7 @@ const SideBarCasinos:FC<SideBarCasinosProps> = ({data}) => {
                     </li>
                 </ul>
             ))}
-        </>
+        </div>
     )
 };
 

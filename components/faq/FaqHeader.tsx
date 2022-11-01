@@ -11,7 +11,7 @@ const FaqHeader:FC = () => (
         </div>
         <div className={styles.header_container}>
             <div className={styles.faq_image}>
-                <Image src='/faq.png' alt="FAQ Logo" width={200} height={141} />
+                <Image src='/faq.png' alt="FAQ" width={200} height={141}/>
             </div>
             <div className={styles.faq_text}>
                 Nulla eget magna ut purus iaculis dapibus. Vestibulum euismod fringilla gravida. Donec a quam a elit tristique fringilla. Nam ipsum enim, bibendum vitae magna et, placerat porttitor enim. Suspendisse potenti. Donec ut lorem placerat, feugiat magna non, sodales risus. Fusce rutrum suscipit diam, eu tempor erat sollicitudin vel.
@@ -19,4 +19,5 @@ const FaqHeader:FC = () => (
         </div>
     </>
 );
+
 export default FaqHeader;

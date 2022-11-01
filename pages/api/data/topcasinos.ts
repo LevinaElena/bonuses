@@ -1,6 +1,6 @@
 import {number, string} from "prop-types";
 
-export const sidebar = [
+export const topcasinos = [
             {
                 id: 1,
                 name: 'Ozwin',
