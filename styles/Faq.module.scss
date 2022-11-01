@@ -8,9 +8,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
-  .container_faq {flex-wrap: nowrap;}
-}
 
 .left {
   display: flex;
@@ -264,3 +261,12 @@
   color: $very-dark-blue;
   font-weight: 600;
 }
+
+@media (min-width: 768px) {
+  .container_faq {flex-wrap: nowrap;}
+}
+
+@media (max-width: 768px) {
+  .side_bar {margin-left: 1.8rem;}
+}
+
