@@ -36,12 +36,16 @@ const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 };
 
 export const getStaticProps:GetStaticProps = async () => {
-    const response = await fetch(`${process.env.API_HOST}/faq/`);
-    const data = await response.json();
-    if (!data) {
-        return { notFound: true,}
+    try {
+        const response = await fetch(`${process.env.API_HOST}/faq/`);
+        const data = await response.json();
+        if (!data) {
+            return { notFound: true,}
+        }
+        return {props: {qa: data}}
+    } catch {
+        return { props: {qa: null}}
     }
-    return {props: {qa: data}}
 }
 
 export default FaqBlock;
