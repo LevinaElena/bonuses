@@ -16,7 +16,7 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 
-    const { data: casino } = useSWR(`https://bonuses-grpem4oxt-levinaelena.vercel.appapi/topcasinos/`,fetcher);
+    const { data: casino } = useSWR(`https://bonuses-grpem4oxt-levinaelena.vercel.app/api/topcasinos/`,fetcher);
     const { data: topBonuses } = useSWR('https://bonuses-grpem4oxt-levinaelena.vercel.app/api/topbonuses',fetcher);
     const { data: games } = useSWR('https://bonuses-grpem4oxt-levinaelena.vercel.app/api/topgames',fetcher);
 
@@ -37,7 +37,7 @@ const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 
 export const getStaticProps:GetStaticProps = async () => {
     try {
-        const response = await fetch(`https://bonuses-grpem4oxt-levinaelena.vercel.app/faq/`);
+        const response = await fetch(`https://bonuses-grpem4oxt-levinaelena.vercel.app/api/faq/`);
         const data = await response.json();
         if (!data) {
             return { notFound: true,}
