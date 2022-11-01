@@ -16,15 +16,15 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 
-    const { data: casino } = useSWR(`https://bonuses-levinaelena.vercel.app/api/topcasinos/`,fetcher);
-    const { data: topBonuses } = useSWR('https://bonuses-levinaelena.vercel.app/api/topbonuses',fetcher);
-    const { data: games } = useSWR('https://bonuses-levinaelena.vercel.app/api/topgames',fetcher);
+    const { data: casino } = useSWR(`http://localhost:3000/api/topcasinos/`,fetcher);
+    const { data: topBonuses } = useSWR('http://localhost:3000/api/topbonuses',fetcher);
+    const { data: games } = useSWR('http://localhost:3000/api/topgames',fetcher);
 
     return (
         <div className={styles.container_faq}>
             <div className={styles.wrapper}>
-                 <FaqHeader/>
-                 <FaqBody qa={qa}/>
+                <FaqHeader/>
+                <FaqBody qa={qa}/>
             </div>
             <div className={styles.side_bar}>
                 <SideBarBlock sideBarName={'Top Casinos'} data={casino} type={'casino'}/>
@@ -36,16 +36,12 @@ const FaqBlock:NextPage<questionAnswerProps> = ({qa}) => {
 };
 
 export const getStaticProps:GetStaticProps = async () => {
-    try {
-        const response = await fetch(`https://bonuses-levinaelena.vercel.app/api/faq/`);
-        const data = await response.json();
-        if (!data) {
-            return { notFound: true,}
-        }
-        return {props: {qa: data}}
-    } catch {
-        return { props: {qa: null}}
+    const response = await fetch(`${process.env.API_HOST}/faq/`);
+    const data = await response.json();
+    if (!data) {
+        return { notFound: true,}
     }
+    return {props: {qa: data}}
 }
 
 export default FaqBlock;
